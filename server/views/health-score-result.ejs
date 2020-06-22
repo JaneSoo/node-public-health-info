@@ -1,0 +1,41 @@
+<%- include ("./_partial/_header.ejs"); %>
+    <h2 style="text-align: center;">Result</h2>
+    <p style="text-align: center;"> Note that minimum score is 0 and maximum score is 1000</p>
+    <div align="center">
+        <table class="table table-bordered hide">
+            <tr>
+                <td style="width: 50%;">Overal Score</td>
+                <td id="overal"><%= scr %></td>
+            </tr>
+            <tr>
+                <td>Lifestyle Score</td>
+                <td id="lifestyle"><%= components.lfs %></td>
+            </tr>
+            <tr>
+                <td>Feeling Score</td>
+                <td id="feeling"><%= components.fee %></td>
+            </tr>
+            <tr>
+                <td>Body Score</td>
+                <td id="body"><%= components.bdy %></td>
+            </tr>
+            <tr>
+                <td>Wellness Score</td>
+                <td id="wellness"><%= subscores.wel %></td>
+            </tr>
+            <tr>
+                <td>Anti Depression Score</td>
+                <td id="depression"><%= subscores.dep %></td>
+            </tr>
+            <tr>
+                <td>Anti Stress Score</td>
+                <td id="stress"><%= subscores.str %></td>
+            </tr>
+            <tr>
+                <td>Nutrition Score</td>
+                <td id="nutrition"><%= subscores.nut %></td>
+            </tr>
+        </table>
+        <a class="btn btn-outline-success" href="/health/score">Submit another form</a>
+    </div>
+<%- include ("./_partial/_footer.ejs"); %>

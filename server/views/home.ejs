@@ -1,0 +1,75 @@
+<%- include ("./_partial/_header.ejs"); %>
+
+<link rel="stylesheet" href="public/styles/styles.css" />
+
+<div class="main-content">
+    <h1 class="text-center">Welcome!</h1>
+
+    <p>Get current health conditions for your desired location.</p>
+
+    <div class="row ">
+        <form action="/getdata" method="post" style="width: 100%;">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <input type="button" value="Get location" id="get-location-btn" class="btn btn-outline-secondary">
+                </div>
+                <input name="city" type="text" id="search-input" class="form-control"
+                    placeholder="Or search for the city..." autocomplete="off" />
+            </div>
+            <div id="match-list"></div>
+            <input type="hidden" name="longitudeinput" id="longitudeinputid">
+            <input type="hidden" name="latitudeinput" id="latitudeinputid">
+            <input type="hidden" name="citynameinput" id="citynameinputid">
+            <input type="hidden" name="countrycodeinput" id="countrycodeinputid">
+            <input type="hidden" name="countryinput" id="countryinputid">
+            <br>
+
+            <div class="text-center">
+                <input type="submit" value="Get data" class="btn btn-primary btn-lg" id="data-submit-btn" disabled />
+            </div>
+
+        </form>
+    </div>
+
+</div>
+<!-- <script src="public/styles/app.js"></script> -->
+
+
+<style>
+    #match-list {
+        -webkit-box-shadow: -3px 3px 5px 0px rgba(166, 161, 166, 1);
+        -moz-box-shadow: -3px 3px 5px 0px rgba(166, 161, 166, 1);
+        box-shadow: -3px 3px 5px 0px rgba(166, 161, 166, 1);
+        border-right: 1px solid rgba(166, 161, 166, 1);
+        /* padding-top: 5px; */
+        position: absolute;
+        background-color: #fff;
+        width: 75%;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        z-index: 100;
+    }
+
+    #search-results-wrapper {
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+    .search-result {
+        list-style-type: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+    }
+
+    .search-result:hover {
+        background-color: #ECF0F1;
+    }
+
+    #search-input:focus {
+        border-color: #ced4da;
+        box-shadow: none;
+    }
+</style>
+
+<%- include ("./_partial/_footer.ejs"); %>

@@ -1,0 +1,51 @@
+<%- include ("./_partial/_header.ejs"); %>
+<h2 style="text-align: center;">Submit information to see your health score</h2>
+<p style="text-align: center;">Limited to 2 requests per minute and total of 10 requests per day</p>
+<p style="text-align: center;">More info: <a href="https://models.dacadoo.com/doc/score/3" style="color:green;" target="_blank">Health Score</a></p>
+<br/>
+<form action="/health/score/submit" method="post">
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="mhmAge">Age</label>
+                <input class= "form-control" type="number" name="mhmAge" placeholder="Age range 17-86" min="17" max="86" required/>
+            </div>
+            <div class="form-group">
+                <label for="mhmHgt">Height</label>
+                <input class= "form-control" type="number" name="mhmHgt" placeholder="Height in cm" min="85" max="215" required/>
+            </div>
+            <div class="form-group">
+                <label for="qlmQ01">Do you feel you are in good health?</label>
+                <input class= "form-control" type="number" name="qlmQ01" placeholder="Score range 0.0 - 1.0" step="any" min="0" max="1" required/>
+            </div>
+            <div class="form-group">
+                <label for="qlmQ03">How often are you in physical or emotional pain?</label>
+                <input class= "form-control" type="number" name="qlmQ03" placeholder="Score range 0.0 - 1.0" step="any" min="0" max="1" required/>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label for="mhmSex">Gender</label>
+                <input class= "form-control" type="number" name="mhmSex" placeholder="Type 1 for Male or 0 for Female" min="0" max="1" required/>
+            </div>
+            <div class="form-group">
+                <label for="mhmWgt">Weight</label>
+                <input class= "form-control" type="number" name="mhmWgt" placeholder="Weight in kg" min="40" max="135" required/>
+            </div>
+            <div class="form-group">
+                <label for="qlmQ02">Are you satisfied with your state of health?</label>
+                <input class= "form-control" type="number" name="qlmQ02" placeholder="Score range 0.0 - 1.0" step="any" min="0" max="1" required/>
+            </div>
+            <div class="form-group">
+                <label for="qlmQ07">Do you feel hopeful about the future?</label>
+                <input class= "form-control" type="number" name="qlmQ07" placeholder="Score range 0.0 - 1.0" step="any" min="0" max="1" required/>
+            </div>
+        </div>
+    </div>
+    <div align=right>
+        <button class="btn btn-outline-success">Submit</button>
+    </div>
+</form>
+</br>
+</br>
+<%- include ("./_partial/_footer.ejs"); %>
